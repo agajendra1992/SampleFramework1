@@ -3,6 +3,7 @@ package FrameworkApp.Sample.Common;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -69,4 +70,8 @@ public class Common {
 		Initilization.driver.quit();
 	}
 
+	public void loadlog() {
+		String log4jConfPath = System.getProperty("user.dir") + "\\log4j.properties";
+		PropertyConfigurator.configure(log4jConfPath);
+	}
 }

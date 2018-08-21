@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-SampleSuite">
-                    <span>C:\Users\GA394126\git\SampleFramework1\SampleApp.xml</span>
+                    <span>C:\Users\user\git\SampleFramework2\SampleApp.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,36 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">0 methods,   </span>
+                    <span class="method-stats">4 methods,   4 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-SampleSuite" class="hide-methods passed suite-SampleSuite"> (hide)</a> <!-- hide-methods passed suite-SampleSuite -->
+                      <a href="#" panel-name="suite-SampleSuite" class="show-methods passed suite-SampleSuite"> (show)</a> <!-- show-methods passed suite-SampleSuite -->
+                    </span>
+                    <div class="method-list-content passed suite-SampleSuite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SampleSuite" title="FrameworkApp.Sample.LoginScript" hash-for-method="loginapp(OPPO, )">loginapp(OPPO, )</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SampleSuite" title="FrameworkApp.Sample.LoginScript" hash-for-method="loginapp(54545, daads)">loginapp(54545, daads)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SampleSuite" title="FrameworkApp.Sample.LoginScript" hash-for-method="loginapp(, 55212)">loginapp(, 55212)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SampleSuite" title="FrameworkApp.Sample.LoginScript" hash-for-method="loginapp(admin, manager)">loginapp(admin, manager)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-SampleSuite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -103,10 +132,50 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-SampleSuite" class="panel SampleSuite">
+          <div class="suite-SampleSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">FrameworkApp.Sample.LoginScript</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginapp(OPPO, )">
+                  </a> <!-- loginapp(OPPO, ) -->
+                  <span class="method-name">loginapp</span>
+                  <span class="parameters">(OPPO, )</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginapp(54545, daads)">
+                  </a> <!-- loginapp(54545, daads) -->
+                  <span class="method-name">loginapp</span>
+                  <span class="parameters">(54545, daads)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginapp(, 55212)">
+                  </a> <!-- loginapp(, 55212) -->
+                  <span class="method-name">loginapp</span>
+                  <span class="parameters">(, 55212)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginapp(admin, manager)">
+                  </a> <!-- loginapp(admin, manager) -->
+                  <span class="method-name">loginapp</span>
+                  <span class="parameters">(admin, manager)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-SampleSuite-class-passed -->
         </div> <!-- panel SampleSuite -->
         <div panel-name="test-xml-SampleSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\GA394126\git\SampleFramework1\SampleApp.xml</span>
+            <span class="header-content">C:\Users\user\git\SampleFramework2\SampleApp.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -119,6 +188,7 @@
   &lt;test thread-count=&quot;5&quot; verbose=&quot;0&quot; name=&quot;SampAppTest&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;FrameworkApp.Sample.LaunchApplication&quot;/&gt;
+      &lt;class name=&quot;FrameworkApp.Sample.LoginScript&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- SampAppTest --&gt;
 &lt;/suite&gt; &lt;!-- SampleSuite --&gt;
@@ -132,7 +202,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">SampAppTest (1 class)</span>
+                <span class="test-name">SampAppTest (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -158,11 +228,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(0);
+data.addRows(4);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'loginapp')
+data.setCell(0, 2, 'FrameworkApp.Sample.LoginScript')
+data.setCell(0, 3, 305);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'loginapp')
+data.setCell(1, 2, 'FrameworkApp.Sample.LoginScript')
+data.setCell(1, 3, 300);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'loginapp')
+data.setCell(2, 2, 'FrameworkApp.Sample.LoginScript')
+data.setCell(2, 3, 250);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'loginapp')
+data.setCell(3, 2, 'FrameworkApp.Sample.LoginScript')
+data.setCell(3, 3, 248);
 window.suiteTableData['SampleSuite']= { tableData: data, tableDiv: 'times-div-SampleSuite'}
 return data;
 }
               </script>
+              <span class="suite-total-time">Total running time: 1 seconds</span>
               <div id="times-div-SampleSuite">
               </div> <!-- times-div-SampleSuite -->
             </div> <!-- times-div -->
@@ -173,6 +260,34 @@ return data;
             <span class="header-content">Reporter output for SampleSuite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">loginapp(OPPO, )</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">ITestResult Test started</span>
+                <span class="reporter-method-output"><a href='C:\Users\user\git\SampleFramework2\src\test\java\Test_sucess\loginapp_21_08_2018_11_13_52.png'> <img src='C:\Users\user\git\SampleFramework2\src\test\java\Test_sucess\loginapp_21_08_2018_11_13_52.png' height='100' width='100'/> </a></span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">loginapp(54545, daads)</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">ITestResult Test started</span>
+                <span class="reporter-method-output"><a href='C:\Users\user\git\SampleFramework2\src\test\java\Test_sucess\loginapp_21_08_2018_11_13_54.png'> <img src='C:\Users\user\git\SampleFramework2\src\test\java\Test_sucess\loginapp_21_08_2018_11_13_54.png' height='100' width='100'/> </a></span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">loginapp(, 55212)</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">ITestResult Test started</span>
+                <span class="reporter-method-output"><a href='C:\Users\user\git\SampleFramework2\src\test\java\Test_sucess\loginapp_21_08_2018_11_13_53.png'> <img src='C:\Users\user\git\SampleFramework2\src\test\java\Test_sucess\loginapp_21_08_2018_11_13_53.png' height='100' width='100'/> </a></span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">loginapp(admin, manager)</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">ITestResult Test started</span>
+                <span class="reporter-method-output"><a href='C:\Users\user\git\SampleFramework2\src\test\java\Test_sucess\loginapp_21_08_2018_11_13_55.png'> <img src='C:\Users\user\git\SampleFramework2\src\test\java\Test_sucess\loginapp_21_08_2018_11_13_55.png' height='100' width='100'/> </a></span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-SampleSuite" class="panel">
@@ -193,9 +308,31 @@ return data;
                 <span class="method-name">launchapp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">FrameworkApp.Sample.LoginScript</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">loginapp(OPPO, )</span>
+                <span class="method-start">33531 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">loginapp(, 55212)</span>
+                <span class="method-start">34490 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">loginapp(54545, daads)</span>
+                <span class="method-start">35146 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">loginapp(admin, manager)</span>
+                <span class="method-start">35879 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">FrameworkApp.Sample.LaunchApplication</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">clsbrowser</span>
-                <span class="method-start">18833 ms</span>
+                <span class="method-start">37071 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

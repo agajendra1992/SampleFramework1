@@ -32,11 +32,12 @@ public class ExcelRead {
 		int row = sh.getLastRowNum();
 		Row r = sh.getRow(0);
 		int column = r.getLastCellNum();
+		readdata = new String[row][column];
 		int ci, cj;
 		ci = 0;
-		for (int i = 1; i <= row; i++, ci++) {
+		for (int i = 1; i <= row; ci++, i++) {
 			cj = 0;
-			for (int j = 0; i < column; j++, cj++) {
+			for (int j = 0; j < column; cj++, j++) {
 
 				readdata[ci][cj] = getCellData(i, j);
 			}

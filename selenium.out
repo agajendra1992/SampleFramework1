@@ -1,5 +1,3 @@
-2018-08-21 14:13:28 INFO  LaunchApplication:20 - TEST THE APP
-2018-08-21 14:13:44 INFO  LaunchApplication:25 - Browser is Launched
-2018-08-21 14:13:44 INFO  LaunchApplication:27 - Browser is Maximized
-2018-08-21 14:13:46 INFO  LaunchApplication:29 - Url is Loaded in Browser
-2018-08-21 14:13:47 INFO  LaunchApplication:39 - Browser is Closed
+2018-08-21 23:13:54 INFO  LoginScript:18 - Login Validation Started
+2018-08-21 23:13:55 INFO  LoginScript:20 - Login Validation Ended
+2018-08-21 23:13:56 INFO  LaunchApplication:34 - Browser is Closed

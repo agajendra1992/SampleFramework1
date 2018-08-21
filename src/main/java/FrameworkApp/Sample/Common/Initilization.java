@@ -7,8 +7,8 @@ public class Initilization {
 
 	public static WebDriver driver;
 	public static WebElement ele;
-	public static String path = "";
-	public static String filename = "";
+	public static String path = System.getProperty("user.dir") + "/src/main/java/FrameworkApp/Sample/Data/";
+	public static String filename = "Actitime.xlsx";
 	public static String Sheet = "Login";
 	public static String chromewebDriverValue = System.getProperty("user.dir")
 			+ "/target/tmp_webdrivers/chromedriver-windows-32bit.exe";
@@ -17,7 +17,5 @@ public class Initilization {
 	public static String firefoxwebDriverValue = System.getProperty("user.dir")
 			+ "/target/tmp_webdrivers/geckodriver-windows-32bit.exe";
 	public static String url = "http://192.168.0.5:8080/login.do";
-	
-
 
 }
