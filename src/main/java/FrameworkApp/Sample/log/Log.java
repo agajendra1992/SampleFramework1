@@ -3,26 +3,28 @@ package FrameworkApp.Sample.log;
 
 import java.util.logging.Logger;
 
+import org.apache.log4j.PropertyConfigurator;
+
 public class Log {
 
 	// Initialize Log4j logs
 
-	private static Logger Log = Logger.getLogger(Log.class.getName());//
+	private static Logger logger = Logger.getLogger(Log.class.getName());//
 
 	// This is to print log for the beginning of the test case, as we usually run so
 	// many test cases as a test suite
 
 	public static void startTestCase(String sTestCaseName) {
+	
+		logger.info("****************************************************************************************");
 
-		Log.info("****************************************************************************************");
+		logger.info("****************************************************************************************");
 
-		Log.info("****************************************************************************************");
+		logger.info("$$$$$$$$$$$$$$$$$$$$$                 " + sTestCaseName + "       $$$$$$$$$$$$$$$$$$$$$$$$$");
 
-		Log.info("$$$$$$$$$$$$$$$$$$$$$                 " + sTestCaseName + "       $$$$$$$$$$$$$$$$$$$$$$$$$");
+		logger.info("****************************************************************************************");
 
-		Log.info("****************************************************************************************");
-
-		Log.info("****************************************************************************************");
+		logger.info("****************************************************************************************");
 
 	}
 
@@ -30,15 +32,15 @@ public class Log {
 
 	public static void endTestCase(String sTestCaseName) {
 
-		Log.info("XXXXXXXXXXXXXXXXXXXXXXX             " + "-E---N---D-" + "             XXXXXXXXXXXXXXXXXXXXXX");
+		logger.info("XXXXXXXXXXXXXXXXXXXXXXX             " + "-E---N---D-" + "             XXXXXXXXXXXXXXXXXXXXXX");
 
-		Log.info("X");
+		logger.info("X");
 
-		Log.info("X");
+		logger.info("X");
 
-		Log.info("X");
+		logger.info("X");
 
-		Log.info("X");
+		logger.info("X");
 
 	}
 
@@ -46,13 +48,13 @@ public class Log {
 
 	public static void info(String message) {
 
-		Log.info(message);
+		logger.info(message);
 
 	}
 
 	public static void warn(String message) {
 
-		Log.warning(message);
+		logger.warning(message);
 
 	}
 
