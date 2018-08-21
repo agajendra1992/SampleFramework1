@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [SampleSuite]">
+  <listeners>
+    <listener class-name="FrameworkApp.Sample.testng.Listener"/>
+  </listeners>
+  <test thread-count="5" name="SampAppTest(failed)">
+    <classes>
+      <class name="FrameworkApp.Sample.LoginScript">
+        <methods>
+          <include name="loginapp"/>
+        </methods>
+      </class> <!-- FrameworkApp.Sample.LoginScript -->
+    </classes>
+  </test> <!-- SampAppTest(failed) -->
+</suite> <!-- Failed suite [SampleSuite] -->

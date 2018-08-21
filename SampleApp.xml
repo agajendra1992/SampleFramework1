@@ -7,6 +7,8 @@
 	<test name="SampAppTest">
 		<classes>
 			<class name="FrameworkApp.Sample.LaunchApplication" />
+			<class name="FrameworkApp.Sample.LoginScript" />
+			
 		</classes>
 
 	</test>
