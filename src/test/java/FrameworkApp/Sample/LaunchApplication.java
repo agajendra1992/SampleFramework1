@@ -18,7 +18,6 @@ public class LaunchApplication {
 		Log.startTestCase("TEST CASE STARTED");
 		// c.closoalltbrowser();
 		new Common().launchbrowser("chrome");
-		Reporter.log("Browser is Launched");
 		logger.info("Browser is Launched");
 		new Common().windowmaximize();
 		logger.info("Browser is Maximized");
