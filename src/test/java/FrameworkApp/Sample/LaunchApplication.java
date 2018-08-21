@@ -14,9 +14,7 @@ public class LaunchApplication {
 
 	@BeforeSuite
 	public void launchapp() {
-		String log4jConfPath = System.getProperty("user.dir") + "\\log4j.properties";
-		System.out.println(log4jConfPath);
-		PropertyConfigurator.configure(log4jConfPath);
+		new Common().loadlog();
 		Log.startTestCase("TEST CASE STARTED");
 		// c.closoalltbrowser();
 		new Common().launchbrowser("chrome");
