@@ -17,4 +17,7 @@ public class Initilization {
 	public static String firefoxwebDriverValue = System.getProperty("user.dir")
 			+ "/target/tmp_webdrivers/geckodriver-windows-32bit.exe";
 	public static String url = "http://192.168.0.5:8080/login.do";
+	
+
+
 }

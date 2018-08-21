@@ -1,8 +1,8 @@
 package FrameworkApp.Sample.Common;
 
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Common {
+	private static final Logger logger = Logger.getLogger(Common.class.getName());
 
 	public void launchbrowser(String Browser) {
 		if (Browser.equalsIgnoreCase("Firefox") || ((Browser.equalsIgnoreCase("FF")))) {

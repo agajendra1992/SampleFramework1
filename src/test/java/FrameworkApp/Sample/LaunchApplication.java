@@ -1,6 +1,7 @@
 package FrameworkApp.Sample;
 
-import org.apache.log4j.xml.DOMConfigurator;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.testng.Reporter;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -9,11 +10,14 @@ import FrameworkApp.Sample.Common.Common;
 import FrameworkApp.Sample.log.Log;
 
 public class LaunchApplication {
+	private static final Logger logger = Logger.getLogger(LaunchApplication.class.getName());
 
 	@BeforeSuite
 	public void launchapp() {
+
+		String log4jConfPath = System.getProperty("user.dir") + "log4J.properties";
+		PropertyConfigurator.configure(log4jConfPath);
 		Log.startTestCase("TEST CASE STARTED");
-		DOMConfigurator.configure("log4j.xml");
 		// c.closoalltbrowser();
 		new Common().launchbrowser("chrome");
 		Reporter.log("Browser is Launched");
