@@ -107,7 +107,7 @@
 					<installationDirectory>${project.basedir}/target/tmp_webdrivers</installationDirectory>
 					<keepDownloadedWebdrivers>true</keepDownloadedWebdrivers>
 				</configuration>
-				<executions>
+			<!-- 	<executions>
 					<execution>
 						<id>webdriver download</id>
 						<phase>generate-resources</phase>
@@ -115,7 +115,7 @@
 							<goal>install-drivers</goal>
 						</goals>
 					</execution>
-				</executions>
+				</executions> -->
 			</plugin>
 			<plugin>
 
