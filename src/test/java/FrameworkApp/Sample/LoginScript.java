@@ -14,7 +14,7 @@ public class LoginScript {
 	@Test(dataProvider = "login", dataProviderClass = Dataprovider.class)
 
 	public void loginapp(String user, String pwd) {
-		new Common().loadlog();
+
 		logger.info("Login Validation Started");
 		new LoginObject().LoginObject(user, pwd);
 		logger.info("Login Validation Ended");
