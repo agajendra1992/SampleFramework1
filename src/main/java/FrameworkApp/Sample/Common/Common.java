@@ -47,9 +47,14 @@ public class Common {
 		Initilization.driver.manage().timeouts().implicitlyWait(i, TimeUnit.SECONDS);
 	}
 
-	public WebElement waitElementTobeLoad(int i1) {
+	public WebElement waitElementTobeLoad(WebElement ele, int i1) {
 		WebDriverWait wait = new WebDriverWait(Initilization.driver, i1);
-		return wait.until(ExpectedConditions.elementToBeClickable(Initilization.ele));
+		return wait.until(ExpectedConditions.elementToBeClickable(ele));
+	}
+
+	public WebElement waitElementTobevisible(WebElement ele, int i1) {
+		WebDriverWait wait = new WebDriverWait(Initilization.driver, i1);
+		return wait.until(ExpectedConditions.visibilityOf(ele));
 	}
 
 	public Select Selectdropdown() {
@@ -74,4 +79,8 @@ public class Common {
 		String log4jConfPath = System.getProperty("user.dir") + "\\log4j.properties";
 		PropertyConfigurator.configure(log4jConfPath);
 	}
+
+	public void scriptpause(int i) throws InterruptedException {
+	Thread.sleep(i);
+}
 }
