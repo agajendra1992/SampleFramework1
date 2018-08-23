@@ -12,6 +12,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 import FrameworkApp.Sample.Common.Initilization;
+import bsh.org.objectweb.asm.Type;
 
 public class ExcelRead {
 
@@ -22,8 +23,7 @@ public class ExcelRead {
 	public static FileOutputStream fio;
 	public static Workbook wb;
 
-	public static Object[][] getData(String path, String filename, String Sheet)
-			throws EncryptedDocumentException, InvalidFormatException, IOException {
+	public static Object[][] getData(String path, String filename, String Sheet) throws EncryptedDocumentException, InvalidFormatException, IOException {
 		f = new File(Initilization.path + Initilization.filename);
 		fis = new FileInputStream(f);
 		wb = WorkbookFactory.create(fis);
@@ -60,13 +60,16 @@ public class ExcelRead {
 	public void writeData(String path, String filename, String Sheet, String[] dataToWrite) throws IOException {
 		sh = wb.getSheet(Initilization.Sheet);
 
-		int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
-
+		int rowCount = sh.getLastRowNum()-sh.getFirstRowNum();
+		int colNum = sh.getLastRowNum();
 		Row r = sh.getRow(0);
-		// Row neRow = sh.createRow(rowCount + 1);
-		for (int k = 0; k < r.getLastCellNum(); k++) {
-			c = r.createCell(k);
-			c.setCellValue(dataToWrite[k]);
+		Row neRow = sh.createRow(rowCount + 1);
+		for (int k = rowCount; k <=r.getLastCellNum();k++) {
+			c = sh.getRow(rowCount).getCell(colNum);
+			c = sh.getRow(rowCount+1).getCell(colNum +1);
+			//c = neRow.createCell(k);
+			c.setCellValue("TEST");
+			// c.setCellValue(dataToWrite[k]);
 			fis.close();
 			fio = new FileOutputStream(Initilization.path + Initilization.filename);
 			wb.write(fio);

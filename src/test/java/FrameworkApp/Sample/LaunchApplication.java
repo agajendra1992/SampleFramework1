@@ -16,7 +16,7 @@ public class LaunchApplication {
 	public void launchapp() {
 		new Common().loadlog();
 		Log.startTestCase("TEST CASE STARTED");
-		// c.closoalltbrowser();
+		//new Common().closoalltbrowser();
 		new Common().launchbrowser("chrome");
 		Reporter.log("Browser is Launched");
 		logger.info("Browser is Launched");
