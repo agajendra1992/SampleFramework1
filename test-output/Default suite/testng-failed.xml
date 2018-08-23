@@ -5,7 +5,7 @@
     <classes>
       <class name="FrameworkApp.Sample.LoginScript">
         <methods>
-          <include name="loginapp"/>
+          <include name="loginapp" invocation-numbers="0 1 2 3"/>
         </methods>
       </class> <!-- FrameworkApp.Sample.LoginScript -->
     </classes>
