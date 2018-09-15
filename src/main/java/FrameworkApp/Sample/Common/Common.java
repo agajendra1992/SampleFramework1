@@ -1,5 +1,7 @@
 package FrameworkApp.Sample.Common;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
@@ -12,6 +14,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import FrameworkApp.Sample.testng.Listener;
 
 public class Common {
 	private static final Logger logger = Logger.getLogger(Common.class.getName());
@@ -83,4 +87,10 @@ public class Common {
 	public void scriptpause(int i) throws InterruptedException {
 	Thread.sleep(i);
 }
+	public static String now(String format) {
+		Calendar cal = Calendar.getInstance();
+		SimpleDateFormat fm = new SimpleDateFormat();
+		return fm.format(cal.getTime());
+	}
+	
 }

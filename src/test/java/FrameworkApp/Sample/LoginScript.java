@@ -1,15 +1,11 @@
 package FrameworkApp.Sample;
 
 import java.io.IOException;
-
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 import org.testng.annotations.Test;
-
 import FrameworkApp.Sample.Common.Common;
-import FrameworkApp.Sample.Common.Initilization;
-import FrameworkApp.Sample.ExcelRead.ExcelRead;
 import FrameworkApp.Sample.PageObject.LoginObject;
+import FrameworkApp.Sample.Report.ReportUtil;
 import FrameworkApp.Sample.testng.Dataprovider;
 
 public class LoginScript {
@@ -18,6 +14,7 @@ public class LoginScript {
 	@Test(dataProvider = "login", dataProviderClass = Dataprovider.class)
 
 	public void loginapp(String InputType, String user, String pwd, String ManaualStep, String Expected) throws InterruptedException, IOException {
+		ReportUtil.startSuite("LoginSuite");
 
 		if (InputType.contains("N")) {
 
@@ -29,14 +26,16 @@ public class LoginScript {
 
 			if (Expected.trim().toUpperCase().equals(new LoginObject().LoginErrorMessgae().getText().trim().toUpperCase())) {
 				logger.assertLog(true, Expected);
-				String[] dataToWrite = { "PASS" };
 
-				new ExcelRead().writeData(Initilization.path, Initilization.filename, Initilization.Sheet, dataToWrite);
+				new ReportUtil().addKeyword(ManaualStep, Expected, "Pass", null);
+				ReportUtil.addTestCase("Login Validation", Common.now("dd.MMMM.yyyy hh.mm.ss aaa"), Common.now("dd.MMMM.yyyy hh.mm.ss aaa"), "PASS");
+
 			} else {
 				logger.assertLog(false, Expected);
-				String[] dataToWrite = { "FAIL" };
-/*				new ExcelRead().writeData(Initilization.path, Initilization.filename, Initilization.Sheet, dataToWrite);
-*/			}
+				new ReportUtil().addKeyword(ManaualStep, Expected, "Fail", null);
+				ReportUtil.addTestCase("Login Validation", Common.now("dd.MMMM.yyyy hh.mm.ss aaa"), Common.now("dd.MMMM.yyyy hh.mm.ss aaa"), "FAIL");
+
+			}
 
 		} else {
 			new LoginObject().LoginObject(user, pwd);
@@ -48,14 +47,15 @@ public class LoginScript {
 
 			if (Expected.trim().toUpperCase().equals(new LoginObject().LoginSuccesMessage().getText().trim().toUpperCase())) {
 				logger.assertLog(true, Expected);
-				String[] dataToWrite = { "PASS" };
+				new ReportUtil().addKeyword(ManaualStep, Expected, "Pass", null);
+				ReportUtil.addTestCase("Login Validation", Common.now("dd.MMMM.yyyy hh.mm.ss aaa"), Common.now("dd.MMMM.yyyy hh.mm.ss aaa"), "PASS");
 
-/*				new ExcelRead().writeData(Initilization.path, Initilization.filename, Initilization.Sheet, dataToWrite);
-*/
 			} else {
 				logger.assertLog(false, Expected);
-				String[] dataToWrite = { "FAIL" };
-/**/			}
+				new ReportUtil().addKeyword(ManaualStep, Expected, "Fail", null);
+				ReportUtil.addTestCase("Login Validation", Common.now("dd.MMMM.yyyy hh.mm.ss aaa"), Common.now("dd.MMMM.yyyy hh.mm.ss aaa"), "FAIL");
+
+			}
 		}
 
 	}

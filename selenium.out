@@ -1,5 +1,9 @@
-2018-08-23 07:38:41 INFO  LaunchApplication:22 - Browser is Launched
-2018-08-23 07:38:42 INFO  LaunchApplication:24 - Browser is Maximized
-2018-08-23 07:39:11 INFO  LaunchApplication:26 - Url is Loaded in Browser
-2018-08-23 07:39:15 INFO  LoginScript:24 - TestCase:Verify with Username Only.
-2018-08-23 07:40:07 INFO  LoginScript:24 - TestCase:Verify with Password Only
+2018-09-15 08:56:30 INFO  LaunchApplication:24 - Browser is Launched
+2018-09-15 08:56:31 INFO  LaunchApplication:26 - Browser is Maximized
+2018-09-15 08:57:00 INFO  LaunchApplication:28 - Url is Loaded in Browser
+2018-09-15 08:57:01 INFO  LoginScript:21 - TestCase:Verify with Username Only.
+2018-09-15 08:57:02 INFO  LoginScript:21 - TestCase:Verify with Password Only
+2018-09-15 08:57:04 INFO  LoginScript:21 - TestCase:Verify with Invalid Username and Password
+2018-09-15 08:57:06 INFO  LoginScript:46 - TestCaseVerify with Valid Username and Password
+2018-09-15 08:57:06 ERROR LoginScript:54 - Logout1
+2018-09-15 08:57:07 INFO  LaunchApplication:34 - Browser is Closed

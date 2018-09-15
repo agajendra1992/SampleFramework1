@@ -5,6 +5,9 @@ import java.io.FileInputStream;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+
+import javax.swing.JOptionPane;
+
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.Row;
@@ -22,6 +25,7 @@ public class ExcelRead {
 	public static FileInputStream fis;
 	public static FileOutputStream fio;
 	public static Workbook wb;
+
 
 	public static Object[][] getData(String path, String filename, String Sheet) throws EncryptedDocumentException, InvalidFormatException, IOException {
 		f = new File(Initilization.path + Initilization.filename);
@@ -57,23 +61,46 @@ public class ExcelRead {
 		}
 	}
 
-	public void writeData(String path, String filename, String Sheet, String[] dataToWrite) throws IOException {
+	public void writeDataStatus(String path, String filename, String Sheet, String[] dataToWrite) throws IOException {
 		sh = wb.getSheet(Initilization.Sheet);
-
-		int rowCount = sh.getLastRowNum()-sh.getFirstRowNum();
+		int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
 		int colNum = sh.getLastRowNum();
 		Row r = sh.getRow(0);
-		Row neRow = sh.createRow(rowCount + 1);
-		for (int k = rowCount; k <=r.getLastCellNum();k++) {
-			c = sh.getRow(rowCount).getCell(colNum);
-			c = sh.getRow(rowCount+1).getCell(colNum +1);
-			//c = neRow.createCell(k);
-			c.setCellValue("TEST");
-			// c.setCellValue(dataToWrite[k]);
-			fis.close();
-			fio = new FileOutputStream(Initilization.path + Initilization.filename);
-			wb.write(fio);
-			fio.close();
-		}
+
+		/*
+		 * for (int k = rowCount; k < r.getLastCellNum(); k++) {
+		 */ c = sh.getRow(rowCount).getCell(colNum);
+		c = r.createCell(rowCount + 1);
+		c.setCellValue("Status");
+
+		fis.close();
+		fio = new FileOutputStream(Initilization.path + Initilization.filename);
+		wb.write(fio);
+		fio.close();
+
 	}
+	/* } */
+
+	public void writeData(String path, String filename, String Sheet, String[] dataToWrite) throws IOException {
+		int o = 0;
+		sh = wb.getSheet(Initilization.Sheet);
+		int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
+		int colNum = sh.getLastRowNum();
+
+		Row r = sh.getRow(o);
+		for (int k = rowCount; k < r.getLastCellNum(); k++) {
+
+			c = sh.getRow(rowCount).getCell(colNum);
+			c = r.createCell(k + 1);
+
+			c.setCellValue(dataToWrite[0]);
+		}
+		fis.close();
+		fio = new FileOutputStream(Initilization.path + Initilization.filename);
+		wb.write(fio);
+		fio.close();
+
+	}
+
+	
 }
