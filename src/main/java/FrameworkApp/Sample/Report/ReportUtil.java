@@ -289,6 +289,7 @@ public class ReportUtil {
 	public void addKeyword(String desc, String key, String stat, String path) {
 
 		description.add(desc);
+	//	description.add(scriptNumber, desc);
 		ExpectedResult.add(key);
 		teststatus.add(stat);
 		screenShotPath.add(path);
@@ -319,7 +320,7 @@ public class ReportUtil {
 			}
 			// Close the input stream
 			in.close();
-			System.out.println(buf);
+			//System.out.println(buf);
 			FileOutputStream fos = new FileOutputStream(indexResultFilename);
 			DataOutputStream output = new DataOutputStream(fos);
 			output.writeBytes(buf.toString());
